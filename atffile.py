@@ -11,12 +11,13 @@ def File_To_String(fileName):
 
 if __name__ == "__main__":
     # Build the lexer
-    #fileName = sys.argv[1]
-    fileName = json.loads(sys.argv[1])
-    languageFile = json.loads(sys.argv[2])
+    fileName = sys.argv[1]
+    languageFile = sys.argv[2]
+    #fileName = json.loads(sys.argv[1])
+    #languageFile = json.loads(sys.argv[2])
 
     lexer = AtfLexer(fileName, languageFile).lexer
-    content_list = File_To_String("/atfchecker_data/storage/"+str(fileName))
+    content_list = File_To_String("./"+str(fileName))
 
     for content in content_list[1:]:
         parser = AtfParser(fileName, languageFile).parser
@@ -28,12 +29,12 @@ if __name__ == "__main__":
                 break
             print(tok)
 
-os.remove("/atfchecker_data/storage/"+fileName)
+os.remove("./"+fileName)
 #exit(0)
-with open("/atfchecker_data/output/"+fileName, 'r') as myfile:
+with open("./"+fileName, 'r') as myfile:
     parseResult = myfile.read()
 
-os.remove("/atfchecker_data/output/"+fileName)
+os.remove("./"+fileName)
 print json.dumps(parseResult)
 
 #Home Ubuntu

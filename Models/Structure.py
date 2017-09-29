@@ -126,6 +126,6 @@ class Structure(object):
                 idx = idx + 1
 
     def write_to_file(self, file, content):
-        text_file = open("/atfchecker_data/output/"+file, "a")
+        text_file = open("./"+file, "a")
         text_file.write(content+"\n")
         text_file.close()

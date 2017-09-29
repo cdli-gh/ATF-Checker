@@ -12,7 +12,7 @@ class Pnumber(object):
         self.fileName = fileName
 
     def ReadPnumbers(self):
-        pfile = open('/Library/WebServer/Documents/checker-script/SupportFiles/ValidPnumbers.txt', 'r')
+        pfile = open('./SupportFiles/ValidPnumbers.txt', 'r')
         plist = pfile.readlines()
         pfile.close()
         content = [x.strip() for x in plist]
@@ -23,7 +23,7 @@ class Pnumber(object):
         temp = []
         oldPlist = []
         newPlist = []
-        with open("/Library/WebServer/Documents/checker-script/SupportFiles/PnumberMap.txt") as file:
+        with open("./SupportFiles/PnumberMap.txt") as file:
             for line in file:
                 temp = line.split()
                 oldPlist.append(temp[0].strip())

@@ -233,6 +233,6 @@ class AtfParser(object):
         # Add list of params so PyORACC users can build their own error msgs.
 
     def write_to_file(self, file, content):
-        text_file = open("/atfchecker_data/output/"+file, "a")
+        text_file = open("./"+file, "a")
         text_file.write(content+"\n")
         text_file.close()

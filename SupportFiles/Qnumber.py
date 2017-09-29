@@ -7,7 +7,7 @@ class Qnumber(object):
         self.qList = self.ReadQnumbers()
 
     def ReadQnumbers(self):
-        qfile = open('/Library/WebServer/Documents/checker-script/SupportFiles/ValidQnumbers.txt', 'r')
+        qfile = open('./SupportFiles/ValidQnumbers.txt', 'r')
         qlist = qfile.readlines()
         qfile.close()
         content = [x.strip() for x in qlist]
